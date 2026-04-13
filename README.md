@@ -1,4 +1,4 @@
-﻿# TopDown55 — Leap Slam Ability
+# TopDown55 — Leap Slam Ability
 
 ## Overview
 
