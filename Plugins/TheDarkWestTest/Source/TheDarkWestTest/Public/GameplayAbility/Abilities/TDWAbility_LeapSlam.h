@@ -65,9 +65,6 @@ protected:
 	float SlamRadius = 300.f;
 
 
-	UPROPERTY(EditDefaultsOnly, Category = "Leap Slam|Arc",
-		meta = (ClampMin = "0.05", ClampMax = "2.0"))
-	float ArcHeightRatio = 0.35f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Leap Slam|Impact")
 	TObjectPtr<UParticleSystem> ImpactVFX;

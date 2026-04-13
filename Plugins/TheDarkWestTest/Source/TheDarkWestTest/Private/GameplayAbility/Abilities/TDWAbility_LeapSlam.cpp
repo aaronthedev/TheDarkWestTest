@@ -72,14 +72,12 @@ void UTDWAbility_LeapSlam::OnTargetDataReceived(const FGameplayAbilityTargetData
 
 	CachedLandingLocation = TargetLocation;
 
-	const float Gravity       = FMath::Abs(GetWorld()->GetGravityZ());
+	const float Gravity        = FMath::Abs(GetWorld()->GetGravityZ());
 	const float HorizontalDist = FVector::Dist2D(CharLoc, TargetLocation);
-	const FVector Direction   = (TargetLocation - CharLoc).GetSafeNormal2D();
+	const FVector Direction    = (TargetLocation - CharLoc).GetSafeNormal2D();
 
-	const float ArcHeight      = FMath::Max(HorizontalDist * ArcHeightRatio, 1.f);
-	const float ZVelocity      = FMath::Sqrt(2.f * Gravity * ArcHeight);
-	const float FlightTime     = 2.f * ZVelocity / Gravity;
-	const float HorizontalSpeed = HorizontalDist / FlightTime;
+	const float ZVelocity      = (CachedAttackSpeed * Gravity) / 2.f;
+	const float HorizontalSpeed = HorizontalDist / CachedAttackSpeed;
 
 	Character->LaunchCharacter(Direction * HorizontalSpeed + FVector(0.f, 0.f, ZVelocity), true, true);
 
