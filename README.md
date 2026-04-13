@@ -191,7 +191,3 @@ ActivateAbility()
 - **Attack speed** is read from `UTDWCombatAttributeSet::GetAttackSpeedAttribute()` on the owning ASC at the moment of activation. It drives both the physics launch velocity (hang-time) and the montage play rate so both stay in sync.
 - The launch velocity formula is: `ZVelocity = (AttackSpeed × |GravityZ|) / 2`, which guarantees that the character reaches the target in roughly `AttackSpeed` seconds regardless of gravity.
 - **Knockback** is applied as a 2D outward impulse from `ImpactLocation`, preserving vertical momentum of the target.
-
-#   T h e D a r k W e s t T e s t 
- 
- 
