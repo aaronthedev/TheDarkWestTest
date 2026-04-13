@@ -64,11 +64,6 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Leap Slam|Impact", meta = (ClampMin = "0"))
 	float SlamRadius = 300.f;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Leap Slam|Range", meta = (ClampMin = "0"))
-	float MinLeapRange = 100.f;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Leap Slam|Range", meta = (ClampMin = "0"))
-	float MaxLeapRange = 1500.f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Leap Slam|Arc",
 		meta = (ClampMin = "0.05", ClampMax = "2.0"))

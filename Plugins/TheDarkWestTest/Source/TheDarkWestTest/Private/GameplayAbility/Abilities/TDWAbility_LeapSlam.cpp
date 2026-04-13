@@ -69,18 +69,6 @@ void UTDWAbility_LeapSlam::OnTargetDataReceived(const FGameplayAbilityTargetData
 	}
 
 	const FVector CharLoc = Character->GetActorLocation();
-	const float Dist2D = FVector::Dist2D(CharLoc, TargetLocation);
-
-	if (Dist2D < MinLeapRange)
-	{
-		EndAbility(GetCurrentAbilitySpecHandle(), GetCurrentActorInfo(), GetCurrentActivationInfo(), true, true);
-		return;
-	}
-
-	if (Dist2D > MaxLeapRange)
-	{
-		TargetLocation = CharLoc + (TargetLocation - CharLoc).GetSafeNormal2D() * MaxLeapRange;
-	}
 
 	CachedLandingLocation = TargetLocation;
 
